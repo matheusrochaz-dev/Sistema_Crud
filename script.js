@@ -7,10 +7,11 @@ const nome = document.querySelector('#nome')
 const sobrenome = document.querySelector('#sobrenome')
 const celular = document.querySelector('#celular')
 const numeroCasa = document.querySelector("#numero")
+let valor_index = null
 
 
 cep.addEventListener("change", () => {
-    lugar(cep.value)
+    lugar(cep.value.replace(/\D/g, ""))
 })
 
 
@@ -124,7 +125,7 @@ botao.addEventListener("click", (event) => {
         }
     }
     atualizar();
-)
+})
 
 function atualizar(){
     corpoTabela.innerHTML = ""
@@ -160,7 +161,7 @@ function atualizar(){
     });
 }
 
-let valor_index = null
+
 
 function editar(index){
 
