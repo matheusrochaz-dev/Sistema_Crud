@@ -15,10 +15,6 @@ cep.addEventListener("change", () => {
 })
 
 
-window.addEventListener('DOMContentLoaded', () =>{
-    atualizar()
-}
-)
 
 
 
@@ -217,3 +213,8 @@ function filtragem(){
     })
     
 }
+
+window.addEventListener('DOMContentLoaded', () =>{
+    atualizar()
+}
+)
