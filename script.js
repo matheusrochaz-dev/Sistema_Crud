@@ -8,11 +8,17 @@ const sobrenome = document.querySelector('#sobrenome')
 const celular = document.querySelector('#celular')
 const numeroCasa = document.querySelector("#numero")
 let valor_index = null
-
+const corpoTabela = document.querySelector("#corpoTabela")
 
 cep.addEventListener("change", () => {
     lugar(cep.value.replace(/\D/g, ""))
 })
+
+
+window.addEventListener('DOMContentLoaded', () =>{
+    atualizar()
+}
+)
 
 
 
@@ -59,7 +65,7 @@ let clientes = JSON.parse(localStorage.getItem('clientes')) || [];
 
 const botao = document.querySelector("#salvar")
 let nomeCompleto = ""
-const corpoTabela = document.querySelector("#corpoTabela")
+
 
 botao.addEventListener("click", (event) => {
     adicionar()
@@ -130,7 +136,6 @@ botao.addEventListener("click", (event) => {
 function atualizar(){
     corpoTabela.innerHTML = ""
         clientes.forEach((cliente, index) => {
-            
             corpoTabela.innerHTML += `
             <tr>
                 <td>${cliente.nome}</td>
@@ -191,6 +196,7 @@ function excluir(index){
 filtro.addEventListener("change", () => {
     filtragem()
 })
+
 
 function filtragem(){
     const filt = document.querySelector('#filtro')
