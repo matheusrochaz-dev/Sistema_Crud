@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <header id="home">   
+        <nav id="navegacao">
+            <h1>
+                <a href="#cadastro">SISTEMA DE CADASTRO</a>
+            </h1>
+
+            <h1>
+                <a href="#tabela">CADASTRO</a>
+            </h1>
+        </nav>
+    </header>
+
+    <main>
+        <div id="cadastro">
+            <h1>Formulário de Cadastro</h1>
+            <form  id="formulario">
+                <div id="forms">
+                    <div class="lab">
+                       <label>Nome</label>
+                        <input type="text" id="nome"> 
+                    </div>
+                    
+                    <div class="lab">
+                        <label >Sobrenome</label>
+                        <input type="text"  id="sobrenome" required>
+                    </div>
+
+                    <div class="lab">
+                        <label>Celular</label>
+                        <input type="text"  id="celular"  maxlength="12"  pattern="[0-9 ]{11,}" placeholder=" 11 123451234" required>
+                    </div>
+                        
+                    <div class="lab">
+                        <label>CEP</label>
+                        <input type="text" id="cep"  maxlength="8" pattern="[0-9]{5}-?[0-9]{3}" inputmode="numeric" required>
+                    </div>
+
+                    <div class="lab">
+                        <label>Logradouro(Rua)</label>
+                        <input type="text" id="rua" readonly> 
+                    </div>
+
+                    <div class="lab">
+                        <label>Número</label>
+                        <input type="number" id="numero" pattern="[0-9]{8}"  inputmode="numeric" required> 
+                    </div>
+
+                    <div class="lab">
+                        <label>Bairro</label>
+                        <input type="text" id="bairro" readonly> 
+                    </div>
+
+                    <div class="lab">
+                        <label>Cidade</label>
+                        <input type="text" id="cidade" readonly> 
+                    </div>
+
+                    <div class="lab" id="estado">
+                        <label>Estado(UF)</label>
+                        <input type="text" id="uf" min="1" readonly> 
+                    </div>
+                </div>
+
+                <div id="botoes">
+                    <button id="salvar" class="btn" type="button">Salvar</button>
+                    <button id="limpar" type="reset" class="btn" onclick="limpar()">Limpar</button>
+                </div>
+                
+            </form>
+        </div>
+        <div id="tabela">
+            <h1>Tabela</h1>
+
+            <div id="filtragem">
+                <label>Filtro</label>
+                <input type="text" id="filtro"> 
+            </div>
+             
+            <table>
+                <thead>
+                    <tr id="c">
+                        <th>Nome</th>
+                        <th>Celular</th>
+                        <th>Endereço</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+
+                <tbody id="corpoTabela">
+                    
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <footer id="rodape">
+        Matheus Rocha © 2026
+    </footer>
+</body>
+</html>
